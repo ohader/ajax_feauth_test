@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+<div>
+    <h1>Login</h1>
+
+    <form id="ajax-feauth-test">
+        <div class="form-group">
+            <label for="login-user">Username</label>
+            <input class="form-control" type="text" name="user" id="login-user">
+            <label for="login-user">Password</label>
+            <input class="form-control" type="password" name="pass" id="login-pass">
+
+            <input type="hidden" name="logintype" value="login">
+            <input type="hidden" name="__RequestToken">
+
+            <button class="btn btn-default" type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+</html>

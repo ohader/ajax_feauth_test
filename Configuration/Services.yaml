@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  OliverHader\AjaxFeauthTest\:
+    resource: '../Classes/*'
+
+  OliverHader\AjaxFeauthTest\Controller\AjaxController:
+    public: true
+  OliverHader\AjaxFeauthTest\Controller\PluginController:
+    public: true
