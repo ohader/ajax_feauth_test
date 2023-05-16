@@ -3,6 +3,7 @@
 namespace OliverHader\AjaxFeauthTest\Middlewares;
 
 use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Core\Http\Uri;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
@@ -29,7 +30,7 @@ trait AjaxUriTrait
             $siteLanguage = $siteLanguage instanceof SiteLanguage ? $siteLanguage : $site->getDefaultLanguage();
             $uri = $siteLanguage->getBase();
         } else {
-            $uri = $normalizedParams->getSitePath();
+            $uri = new Uri($normalizedParams->getSitePath());
         }
 
         return (string)$uri->withPath(rtrim($uri->getPath(), '/') . '/@api/ajax-feauth-test/');
